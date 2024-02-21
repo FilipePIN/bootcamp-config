@@ -22,7 +22,6 @@ bootstrap:
     #
     # Recommended values for a new v2-project are given as comments!
 
-
     # default is: allprojects
     #   recommended is shorter: 'all'
         aggregated-level-name: all
@@ -74,26 +73,23 @@ bootstrap:
                 idp-source-name: bootcamp-43-test-all-read # for the AAD Group to be matched to cdf-group
                 idp-source-id: cf9540f5-b60d-4cc6-b0ea-a2df4cc49217 # i.e. bootcamp-01-test-all-read
 
-
         - cdf-project: cdf-bootcamp-43-prod # i.e. bootcamp-01-test
           mappings:
-            - cdf-group: cdf:root
-              idp-source-name: bootcamp-43-prod-admin
-              idp-source-id: 08af2541-0954-4b98-8217-8b9f1336501a
-            - cdf-group: cdf:all:owner
-              idp-source-name: bootcamp-43-prod-all-owner # for the AAD Group to be matched to cdf-group
-              idp-source-id: 5b10c18b-e941-4ab8-9fea-1cd92f022765 # i.e. bootcamp-01-test-all-owner
-            - cdf-group: cdf:all:read
-              idp-source-name: bootcamp-43-prod-all-read # for the AAD Group to be matched to cdf-group
-              idp-source-id: 73c8a441-457c-4bcb-aa47-2e95a53264c0 # i.e. bootcamp-01-test-all-read
-            - cdf-group: cdf:uc:001:oee:owner
-              idp-source-name: bootcamp-43-prod-uc-001-oee-owner # for the AAD Group to be matched to cdf-group
-              idp-source-id: e21249a6-df61-497e-a82f-db0328235b30 # i.e. bootcamp-01-test-all-owner
-            - cdf-group: cdf:uc:001:oee:read
-              idp-source-name: bootcamp-43-prod-all-read # for the AAD Group to be matched to cdf-group
-              idp-source-id: 495ce3d0-f593-4422-a84d-5081cb37f240 # i.e. bootcamp-01-test-all-read
-
-
+              - cdf-group: cdf:root
+                idp-source-name: bootcamp-43-prod-admin
+                idp-source-id: 08af2541-0954-4b98-8217-8b9f1336501a
+              - cdf-group: cdf:all:owner
+                idp-source-name: bootcamp-43-prod-all-owner # for the AAD Group to be matched to cdf-group
+                idp-source-id: 5b10c18b-e941-4ab8-9fea-1cd92f022765 # i.e. bootcamp-01-test-all-owner
+              - cdf-group: cdf:all:read
+                idp-source-name: bootcamp-43-prod-all-read # for the AAD Group to be matched to cdf-group
+                idp-source-id: 73c8a441-457c-4bcb-aa47-2e95a53264c0 # i.e. bootcamp-01-test-all-read
+              - cdf-group: cdf:uc:001:oee:owner
+                idp-source-name: bootcamp-43-prod-uc-001-oee-owner # for the AAD Group to be matched to cdf-group
+                idp-source-id: e21249a6-df61-497e-a82f-db0328235b30 # i.e. bootcamp-01-test-all-owner
+              - cdf-group: cdf:uc:001:oee:read
+                idp-source-name: bootcamp-43-prod-all-read # for the AAD Group to be matched to cdf-group
+                idp-source-id: 495ce3d0-f593-4422-a84d-5081cb37f240 # i.e. bootcamp-01-test-all-read
 
     namespaces:
         # Typical config will have a namespace for data sources ("src") and a namespace for use cases ("uc")
@@ -113,13 +109,12 @@ bootstrap:
 
           # Node names will normally follow src:001:srcname or uc:001:usecasename naming convention
           ns-nodes:
-            - node-name: uc:001:oee
-              description: Use case for OEE
-              shared-access:
-                read:
-                  - node-name: src:001:sap
-                  - node-name: src:002:opcua
-
+              - node-name: uc:001:oee
+                description: Use case for OEE
+                shared-access:
+                    read:
+                        - node-name: src:001:sap
+                        - node-name: src:002:opcua
 
 # de-facto standards for CDF CogniteClient and logger configuration.
 # Following the same parameter structure as the 'Cognite Python Extractor-Utilities'
